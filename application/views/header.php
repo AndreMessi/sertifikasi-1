@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Sertifikiasi</title>
+    <title><?php echo $judul; ?></title>
   <!--===============================================================================================-->
     <link rel="stylesheet" href="<?php echo base_url(); ?>bootstrap/css/util.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>bootstrap/css/main.css">

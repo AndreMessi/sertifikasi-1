@@ -58,3 +58,7 @@ $route['pengumuman']= 'welcome/pengumuman';
 $route['kontak']= 'welcome/kontak';
 $route['profil']= 'welcome/profil';
 $route['daftar']= 'welcome/daftar';
+$route['dashboard']= 'welcome/dashboard';
+$route['inputpengumuman']= 'welcome/inputpengumuman';
+$route['daftarsertifikasi']= 'welcome/daftarsertifikasi';
+$route['jadwal']= 'welcome/jadwal';

@@ -1,4 +1,4 @@
-<?php
+    <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
   
 class Auth extends CI_Controller {
@@ -6,7 +6,7 @@ class Auth extends CI_Controller {
      public function __construct()
       {
         parent::__construct();
-        $this->load->model('Form_model');
+        $this->load->model('form_model');
         $this->load->library(array('form_validation','session'));
         $this->load->helper(array('url','html','form'));
         $this->id = $this->session->admin('id');
@@ -38,7 +38,7 @@ class Auth extends CI_Controller {
  
              );
    
-            $check = $this->Form_model->auth_check($data);
+            $check = $this->form_model->auth_check($data);
             
             if($check != false){
  
@@ -50,7 +50,7 @@ class Auth extends CI_Controller {
   
             $this->session->set_admin($user);
  
-             redirect( base_url('dashboard') ); 
+             redirect( base_url('auth/dashboard') ); 
             }
  
            $this->load->view('login');
@@ -91,7 +91,7 @@ class Auth extends CI_Controller {
   
              $this->session->set_admin($admin);
  
-             redirect( base_url('auth/dashboard') ); 
+             redirect( base_url('admin/dashboard') ); 
             }
  
          

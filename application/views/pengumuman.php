@@ -1,1 +1,4 @@
-<h2>disini ada pengumuman</h2>
+<section>
+	
+	<h2>Pengumuman ada disini </h2>
+</section>
