@@ -76,7 +76,7 @@
 					<!-- OVERVIEW -->
 					<div class="panel panel-headline">
 							<div class="container">
-								<h2 style="padding: 15px;">Jadwal Sertifikasi</h2><hr>
+								<h2 style="padding: 15px;">Pengumuman</h2><hr>
 								<div class="panel-body col-md-10">
 			                      <table class="table">
 			                      	<div class="container">
@@ -85,10 +85,13 @@
 			                        <thead>
 			                          <tr>
 			                            <th scope="col">No</th>
-			                            <th scope="col">Nama Sertifikasi</th>
+			                            <th scope="col">Nim</th>
+			                            <th scope="col">Nama</th>
+			                            <th scope="col">Prodi</th>
+			                            <th scope="col">Sertifikasi</th>
+			                            <th scope="col">Dosen</th>
 			                            <th scope="col">Tanggal Mulai</th>
 			                            <th scope="col">Tanggal Selesai</th>
-			                            <th scope="col">Dosen</th>
 			                            <th scope="col">Jam</th>
 			                            <th scope="col">Aksi</th>
 			                          </tr>
@@ -99,10 +102,13 @@
 			                          foreach ($data as $isi) { ?>
 			                          <tr>
 			                            <td><?php echo $no++;?></td>
-			                            <td><?php echo $isi['namaSertifikasi'];?></td>
+			                            <td><?php echo $isi['nim_mhs'];?></td>
+			                            <td><?php echo $isi['nama_mhs'];?></td>
+			                            <td><?php echo $isi['prodi'];?></td>
+			                            <td><?php echo $isi['sertifikasi'];?></td>
+			                            <td><?php echo $isi['dosen'];?></td>
 			                            <td><?php echo $isi['tglMulai'];?></td>
 			                            <td><?php echo $isi['tglSelesai'];?></td>
-			                            <td><?php echo $isi['dosen'];?></td>
 			                            <td><?php echo $isi['jam'];?></td>
 			                            <td>
 			                            	<a href="<?php echo site_url('inputpengumuman') ?>"><i class="glyphicon glyphicon-pencil text-success"></i></a>&nbsp;&nbsp;

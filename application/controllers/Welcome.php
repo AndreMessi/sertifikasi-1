@@ -42,7 +42,7 @@ class Welcome extends CI_Controller {
 			$this->load->model('mymodel');
 			if ($this->mymodel->login($username, $password)) {
 				$session_data = array(
-					'usernam' => $username
+					'username' => $username
 				);
 				$this->session->set_userdata($session_data);
 				echo "<script>alert('Login berhasil');window.location='dashboard'</script>";		
@@ -58,6 +58,14 @@ class Welcome extends CI_Controller {
 		}
 	}
 	public function dashboard(){
+		$data = $this->mymodel->TampilJadwalSertifikas();			
+		$this->load->view('admin/jadwal',array('data' => $data ));	
+
+		$data = $this->mymodel->TampilSertifikas();
+		$this->load->view('admin/daftarsertifikasi',array('data' => $data));
+
+		$data = $this->mymodel->TampilDetailSertifikas();
+		$this->load->view('admin/tampilpengumuman',array('data' => $data));
 		$this->load->view('admin/dashboard');
 		
 	}
@@ -74,15 +82,23 @@ class Welcome extends CI_Controller {
 		
 		$data = $this->mymodel->TampilSertifikas();
 		$this->load->view('admin/daftarsertifikasi',array('data' => $data));
+		
+	}
+	public function tampilpengumuman(){
+		
+		$data = $this->mymodel->TampilDetailSertifikas();
+		$this->load->view('admin/tampilpengumuman',array('data' => $data));
+		
 	}
 	public function logout(){
 		$this->session->unset_userdata('username');
 		redirect(base_url('login'));
 	}
 	public function pengumuman(){
+		$data = $this->mymodel->TampilJadwalSertifikas();
+		$this->load->view('pengumuman',array('data' => $data));
 		$data['judul'] = "Halaman Pengumuman";
 		$this->load->view('header',$data);
-		$this->load->view('pengumuman');
 		$this->load->view('footer',$data);
 	}
 	public function do_pengumuman(){
@@ -90,8 +106,7 @@ class Welcome extends CI_Controller {
 		$tglm = $_POST['tglm'];
 		$tgls = $_POST['tgls'];
 		$dosen = $_POST['dosen'];
-		$waktu = $_POST['waktu'];
-
+		$waktu = $_POST['waktu'];		
 		$data_insert =  array(
 			'namaSertifikasi' => $sertifikasi,
 			'tglMulai' => $tglm,
@@ -105,7 +120,7 @@ class Welcome extends CI_Controller {
 			
 		}
 		else{
-			echo "<script>alert('Gagal Daftar');window.location='dashboard'</script>";
+			echo "<script>alert('Gagal Daftar');window.location='inputpengumuman'</script>";
 
 		} 
 	}
@@ -127,14 +142,14 @@ class Welcome extends CI_Controller {
 		$this->load->view('daftar');
 		$this->load->view('footer',$data);
 	}
-	public function do_daftar(){
+	public function do_daftar(){	
 		$nim = $_POST['nim'];
 		$nama = $_POST['nama'];
 		$prodi = $_POST['prodi'];
 		$sertifikasi = $_POST['sertifikasi'];
 		$waktu = $_POST['tgl'];
 		$nohp = $_POST['nohp'];
-
+		
 		$data_insert =  array(
 			'nim_mhs' => $nim,
 			'nama_mhs' => $nama,

@@ -62,3 +62,4 @@ $route['dashboard']= 'welcome/dashboard';
 $route['inputpengumuman']= 'welcome/inputpengumuman';
 $route['daftarsertifikasi']= 'welcome/daftarsertifikasi';
 $route['jadwal']= 'welcome/jadwal';
+$route['tampilpengumuman']= 'welcome/tampilpengumuman';

@@ -58,14 +58,11 @@
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
 									<li><a href="<?php echo site_url('jadwal') ?>" class="">Jadwal</a></li>
-									<li><a href="#" class="">Pengumuan</a></li>
-									<li><a href="#" class="">Lockscreen</a></li>
+									<li><a href="<?php echo site_url('tampilpengumuman') ?>" class="">Pengumuan</a></li>
 								</ul>
 							</div>
 						</li></a></li>
 						<li><a href="<?php echo site_url('daftarsertifikasi'); ?>" class=""><i class="lnr lnr-chart-bars"></i> <span>Data Sertifikasi</span></a></li>
-						<li><a href="#" class=""><i class="lnr lnr-cog"></i> <span>Panels</span></a></li>
-					</ul>
 				</nav>
 			</div>
 		</div>

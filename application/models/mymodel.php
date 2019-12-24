@@ -20,6 +20,10 @@ class Mymodel extends CI_Model {
 		$data =  $this->db->query('select * from sertifikasi');
 		return $data->result_array();
 	}
+	public function TampilDetailSertifikas(){
+		$data =  $this->db->query('select * from sertifikasi join detailsertifikasi join datarsertifikasi');
+		return $data->result_array();
+	}
 	public function login($username, $password){
 		$this->db->where('username', $username);
 		$this->db->where('password', $password);
