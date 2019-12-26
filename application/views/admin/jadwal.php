@@ -105,8 +105,8 @@
 			                            <td><?php echo $isi['dosen'];?></td>
 			                            <td><?php echo $isi['jam'];?></td>
 			                            <td>
-			                            	<a href="<?php echo site_url('inputpengumuman') ?>"><i class="glyphicon glyphicon-pencil text-success"></i></a>&nbsp;&nbsp;
-			                            	<a href="<?php echo site_url('inputpengumuman') ?>"><i class="glyphicon glyphicon-trash text-danger"></i></a>
+			                            	<a href="<?php echo base_url()."index.php/welcome/edit_data/".$isi['id_sertifikasi']; ?>"><i class="glyphicon glyphicon-pencil text-success"></i></a>&nbsp;&nbsp;
+			                            	<a href="<?php echo base_url()."index.php/welcome/do_delete/".$isi['id_sertifikasi']; ?>"><i class="glyphicon glyphicon-trash text-danger" onclick="alert('Data telah dihapus!!')"></i></a>
 			                            </td>
 			                          </tr>
 			                        <?php } ?>
@@ -137,6 +137,9 @@
 	<script src="<?php echo base_url(); ?>bootstrap/assets/vendor/chartist/js/chartist.min.js"></script>
 	<script src="<?php echo base_url(); ?>bootstrap/assets/scripts/klorofil-common.js"></script>
 	<script>
+		function hapus(){
+			elert("Data telah dihapus");
+		}
 	$(function() {
 		var data, options;
 

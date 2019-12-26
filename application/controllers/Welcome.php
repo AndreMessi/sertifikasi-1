@@ -3,21 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
 	public function index()
 	{		
 		$data['judul'] = "Halaman Utama";
@@ -124,6 +109,54 @@ class Welcome extends CI_Controller {
 
 		} 
 	}
+	public function do_delete($id){
+		$where = array('id_sertifikasi' => $id);
+		$res = $this->mymodel->DeleteDataJadwal('sertifikasi', $where);
+		if ($res>=1) {
+			redirect('welcome/jadwal');
+		}
+		else
+		{
+			false;
+		}
+	}
+	public function edit_data($id){
+		$dts = $this->mymodel->TampilJadwalSertifikas(" where id_sertifikasi = '$id' ");
+		$data = array(
+			"id" => $dts[0]['id_sertifikasi'],
+			"namaSertifikasi" => $dts[0]['namaSertifikasi'],
+			"tglMulai" => $dts[0]['tglMulai'],
+			"tglSelesai" => $dts[0]['tglSelesai'],
+			"dosen" => $dts[0]['dosen'],
+			"jam" => $dts[0]['jam'],
+		);
+		$this->load->view('admin/editjadwal',$data);
+	}
+	public function do_update(){
+		$id = $_POST['id'];
+		$sertifikasi = $_POST['sertifikasi'];
+		$tglm = $_POST['tglm'];
+		$tgls = $_POST['tgls'];
+		$dosen = $_POST['dosen'];
+		$waktu = $_POST['waktu'];		
+		$data_update =  array(
+			'namaSertifikasi' => $sertifikasi,
+			'tglMulai' => $tglm,
+			'tglSelesai' => $tgls,
+			'dosen' => $dosen,
+			'jam' => $waktu
+		); 
+		$where = array('id_sertifikasi' => $id );
+		$res = $this->mymodel->EditDataJadwal('sertifikasi',$data_update,$where);
+		if ($res>=1) {
+			echo "<script>alert('Berhasil diupdate');window.location='jadwal'</script>";
+			
+		}
+		else{
+			echo "<script>alert('Gagal update');window.location='inputpengumuman'</script>";
+
+		} 
+	}
 	public function kontak(){
 		$data['judul'] = "Halaman Kontak";
 		$this->load->view('header',$data);
@@ -160,7 +193,7 @@ class Welcome extends CI_Controller {
 		);
 
 		$res = $this->mymodel->InsertDaftar('datarsertifikasi',$data_insert);
-		if ($res>=1) {
+		if ($res>0) {
 			echo "<script>alert('Berhasil Daftar');window.location='index'</script>";
 			
 		}

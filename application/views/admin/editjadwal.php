@@ -75,18 +75,18 @@
 					<!-- OVERVIEW -->
 					<div class="panel panel-headline">
 							<div class="container">
-								<h2 style="padding: 20px;">Input Jadwal</h2>
-								<form class="form-horizontal" action="<?php echo base_url().'index.php/welcome/do_pengumuman' ?>" method="POST" >
+								<h2 style="padding: 20px;">Edit Jadwal</h2>
+								<form class="form-horizontal" action="<?php echo base_url().'index.php/welcome/do_update' ?>" method="POST" >
 									<div class="form-group hiden">
 										<div class="col-sm-10"> 			
-											<input class="form-control" type="hidden" name="id">
+											<input class="form-control" type="hidden" name="id" readonly value="<?php echo $id;?>">
 										</div>
 									</div>
 									<div class="form-group">
 									  <div class="col-sm-10">
 									  	<label>Pilih Sertifikasi</label>
 									    <select class="form-control" name="sertifikasi" required autofocus>
-									    	<option></option>
+									    	<option ><?php echo $namaSertifikasi;?></option>
 									    	<option value="CCNA">
 									    		<label>CCNA</label>
 									    	</option>
@@ -102,25 +102,25 @@
 									<div class="form-group">
 										<div class="col-sm-10">  
 											<label>Tanggal Mulai</label>			
-											<input class="form-control" type="date" name="tglm" value=" ">
+											<input class="form-control" type="date" name="tglm" value="<?php echo $tglMulai; ?>">
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="col-sm-10">  
 											<label>Tanggal Selesai</label>			
-											<input class="form-control" type="date" name="tgls" value=" ">
+											<input class="form-control" type="date" name="tgls" value="<?php echo $tglSelesai; ?>">
 										</div>
 									</div>									
 									<div class="form-group">
 									  <div class="col-sm-10">  
 									  <label>Dosen</label>        
-									    <input type="text" class="form-control" placeholder="Nama Dosen" name="dosen" required>
+									    <input type="text" class="form-control" placeholder="Nama Dosen" name="dosen" value="<?php echo $dosen; ?>">
 									  </div>
 									</div>
 									<div class="form-group">
 									  <div class="col-sm-10">  
 									  <label>Waktu</label>        
-									    <input type="time" class="form-control"  name="waktu" required>
+									    <input type="time" class="form-control"  name="waktu" value="<?php echo $jam; ?>">
 									  </div>
 									</div>
 									<div class="form-group">         

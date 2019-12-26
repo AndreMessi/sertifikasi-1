@@ -36,6 +36,7 @@
 			                        </tbody>
 			                      </table>
 			                  </div>
+			                  <br><a class="nav-link" href="<?php echo site_url('welcome') ?>"><button class="btn btn-primary btn-lg">Daftar Sertifikasi</button></a>
 							</div>
 					</div>
 				</div>

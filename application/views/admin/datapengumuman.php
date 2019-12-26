@@ -25,7 +25,7 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="brand">
-        <a href="index.html">UNIT SERTIFIKASI</a>
+        <a href="#">UNIT SERTIFIKASI</a>
       </div>
       <div class="container-fluid">
         <div class="navbar-btn">
