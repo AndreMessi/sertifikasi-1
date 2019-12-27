@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 22, 2019 at 08:34 AM
+-- Generation Time: Dec 27, 2019 at 04:23 AM
 -- Server version: 10.1.21-MariaDB
 -- PHP Version: 5.6.30
 
@@ -71,7 +71,8 @@ INSERT INTO `datarsertifikasi` (`id_mhs`, `nim_mhs`, `nama_mhs`, `prodi`, `serti
 (8, 16540212, 'antipecah', 'si', 'ccna', '2019-12-21', '123123123123'),
 (10, 165402121, 'tangguh22', 'ti', 'ccna', '2019-12-21', '123123123123'),
 (11, 165410022, 'gita', 'ti', 'toefl', '2019-12-21', '085934885222'),
-(14, 165410033, 'wahyu', 'TI', 'toefl', '2019-12-23', '085934885222');
+(14, 165410033, 'wahyu', 'TI', 'toefl', '2019-12-23', '085934885222'),
+(15, 165410029, 'wedi', 'TI', 'TOEFL', '2019-10-21', '085934885248');
 
 -- --------------------------------------------------------
 
@@ -93,13 +94,6 @@ CREATE TABLE `detailsertifikasi` (
   `jam` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `detailsertifikasi`
---
-
-INSERT INTO `detailsertifikasi` (`id_detail`, `id_mhs`, `nim_mhs`, `nama_mhs`, `prodi`, `sertifikasi`, `id_sertifikasi`, `dosen`, `tglMulai`, `tglSelesai`, `jam`) VALUES
-(1, 1, 165410089, 'naruto uzumaki', 'teknik informatika', 'CCNA', 1, '', '2019-12-17', '2019-12-28', '10:00');
-
 -- --------------------------------------------------------
 
 --
@@ -120,11 +114,12 @@ CREATE TABLE `sertifikasi` (
 --
 
 INSERT INTO `sertifikasi` (`id_sertifikasi`, `namaSertifikasi`, `tglMulai`, `tglSelesai`, `dosen`, `jam`) VALUES
-(1, 'CCNA', '2019-12-24', '2019-12-31', 'Wagito', '10:00'),
-(2, 'ccna', '2019-12-24', '2019-12-25', 'adiyuda', '12:04'),
-(3, 'ORACLE', '2019-12-24', '2019-12-27', 'AGUNG', '08:00'),
-(4, 'oracle', '2019-12-23', '2019-12-28', 'Bambang', '10:00'),
-(5, 'CCNA', '2019-12-30', '2020-01-01', 'WEDI', '08:30');
+(1, 'CCNA', '2019-12-24', '2019-12-31', 'WAGITO ', '10:00'),
+(26, 'TOEFL', '2019-12-26', '2019-12-28', 'DANI', '10:00'),
+(27, 'ORACLE', '2019-12-26', '2019-12-28', 'AGUNG', '12:45'),
+(28, 'CCNA', '2019-12-26', '2019-12-31', 'ADIYUDA', '10:00'),
+(29, 'ORACLE', '2019-12-27', '2019-12-31', 'BAMBANG', '10:00'),
+(30, 'TOEFL', '2019-12-31', '2020-01-10', 'SHISKA', '08:00');
 
 --
 -- Indexes for dumped tables
@@ -169,17 +164,17 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `datarsertifikasi`
 --
 ALTER TABLE `datarsertifikasi`
-  MODIFY `id_mhs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_mhs` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `detailsertifikasi`
 --
 ALTER TABLE `detailsertifikasi`
-  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_detail` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `sertifikasi`
 --
 ALTER TABLE `sertifikasi`
-  MODIFY `id_sertifikasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_sertifikasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 --
 -- Constraints for dumped tables
 --
